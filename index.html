@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth select-none">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRÉVIA EXCLUSIVA | Barbearia Corte Carioca (Protótipo Protegido)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#CA8A04'
+                        },
+                        dark: {
+                            900: '#0B0C0E',
+                            800: '#15171C',
+                            700: '#22252D'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Desativa Seleção de Texto e Drag de Imagens */
+        * {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            -webkit-user-drag: none !important;
+        }
+
+        /* Marca D'água sobreposta em toda a página */
+        .watermark-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            opacity: 0.12;
+        }
+
+        .watermark-text {
+            transform: rotate(-30deg);
+            font-size: 3.5vw;
+            font-weight: 900;
+            color: #EAB308;
+            white-space: nowrap;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FDE047 0%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans antialiased relative">
+
+    <!-- Marca d'água repetida e centralizada -->
+    <div class="watermark-overlay">
+        <div class="text-center font-serif leading-loose">
+            <p class="watermark-text">AMOSTRA DE DEMONSTRAÇÃO - CÓDIGO PROTEGIDO</p>
+            <p class="watermark-text">PROPRIEDADE INTELECTUAL DA AGÊNCIA</p>
+            <p class="watermark-text">AMOSTRA DE DEMONSTRAÇÃO - CÓDIGO PROTEGIDO</p>
+        </div>
+    </div>
+
+    <!-- Barra de Alerta no Topo -->
+    <div class="bg-red-600 text-white px-4 py-2 text-center text-xs sm:text-sm font-bold tracking-wider uppercase sticky top-0 z-[100] shadow-lg flex items-center justify-center gap-2">
+        <i class="fa-solid fa-lock"></i>
+        <span>PRÉ-VISUALIZAÇÃO DE PROTÓTIPO - DESENVOLVIMENTO DE DESIGN EXCLUSIVO</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="bg-dark-900/95 border-b border-dark-700 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full border border-gold-500/50 flex items-center justify-center bg-dark-800 text-gold-500">
+                    <i class="fa-solid fa-scissors text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-lg leading-tight tracking-wider text-white">CORTE CARIOCA</span>
+                    <span class="text-xs text-gold-500 tracking-widest uppercase">Barbearia no Méier</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" class="hover:text-gold-500 transition-colors">Início</a>
+                <a href="#servicos" class="hover:text-gold-500 transition-colors">Serviços</a>
+                <a href="#localizacao" class="hover:text-gold-500 transition-colors">Localização</a>
+            </nav>
+
+            <button onclick="openDemoModal()" class="bg-gold-500 hover:bg-gold-400 text-dark-900 font-bold px-5 py-2.5 rounded-full text-sm transition-all shadow-md shadow-gold-500/20 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Agendar (Modo Demo)
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative py-20 bg-dark-900 text-center overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-dark-800 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-6">
+                Protótipo para Barbearia no Méier
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+                Design Profissional para a<br>
+                <span class="gold-gradient-text">Barbearia Corte Carioca</span>
+            </h1>
+            <p class="text-gray-400 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+                Modelo visual exclusivo de alta conversão. Criado para atrair novos clientes no Méier e facilitar agendamentos diretos.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="openDemoModal()" class="bg-gold-500 hover:bg-gold-400 text-dark-900 font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-xl shadow-gold-500/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check text-xl"></i>
+                    Testar Botão de Agendamento
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="servicos" class="py-16 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-serif font-bold text-white mb-3">Tabela de Serviços Recomendada</h2>
+                <p class="text-gray-400 text-sm">Visual moderno para destacar os principais pacotes da barbearia.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dark-900 p-6 rounded-2xl border border-dark-700 text-center">
+                    <i class="fa-solid fa-scissors text-gold-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Corte Masculino</h3>
+                    <p class="text-gray-400 text-sm mb-4">Degradê, Social ou Tesoura com lavagem completa e finalização.</p>
+                    <button onclick="openDemoModal()" class="w-full bg-dark-800 hover:bg-gold-500 hover:text-dark-900 text-white font-bold py-2.5 rounded-xl text-sm transition-all">Simular Agendamento</button>
+                </div>
+
+                <div class="bg-dark-900 p-6 rounded-2xl border-2 border-gold-500 text-center shadow-xl">
+                    <span class="bg-gold-500 text-dark-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Destaque</span>
+                    <i class="fa-solid fa-crown text-gold-400 text-3xl mb-4 block"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Combo Corte + Barba</h3>
+                    <p class="text-gray-300 text-sm mb-4">Tratamento completo com barboterapia e toalha quente.</p>
+                    <button onclick="openDemoModal()" class="w-full bg-gold-500 hover:bg-gold-400 text-dark-900 font-bold py-3 rounded-xl text-sm transition-all">Simular Agendamento</button>
+                </div>
+
+                <div class="bg-dark-900 p-6 rounded-2xl border border-dark-700 text-center">
+                    <i class="fa-solid fa-user-ninja text-gold-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Barboterapia</h3>
+                    <p class="text-gray-400 text-sm mb-4">Alinhamento, hidratação profunda e tratamento pós-barba.</p>
+                    <button onclick="openDemoModal()" class="w-full bg-dark-800 hover:bg-gold-500 hover:text-dark-900 text-white font-bold py-2.5 rounded-xl text-sm transition-all">Simular Agendamento</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Localização com Informações Reais -->
+    <section id="localizacao" class="py-16 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <span class="text-gold-500 text-xs font-bold uppercase tracking-wider">Endereço Cadastrado</span>
+                <h2 class="text-3xl font-serif font-bold text-white mt-2 mb-6">Pronto para Conectar no Google Maps</h2>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-gold-500 text-lg"></i>
+                        <span>Rua Carolina Méier, 6 - Méier, Rio de Janeiro - RJ</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-gold-500 text-lg"></i>
+                        <span>(21) 96681-4162</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-dark-800 p-8 rounded-2xl border border-dark-700 text-center">
+                <i class="fa-solid fa-shield-halved text-gold-500 text-5xl mb-4"></i>
+                <h3 class="text-xl font-bold text-white mb-2">Amostra Protegida</h3>
+                <p class="text-gray-400 text-sm mb-6">O código definitivo e a ativação total do site serão entregues imediatamente após a aprovação da proposta comercial.</p>
+                <button onclick="openDemoModal()" class="bg-gold-500 text-dark-900 font-bold px-6 py-3 rounded-xl">Entender Termos do Protótipo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Aviso de Prévia -->
+    <div id="demoModal" class="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-dark-800 border-2 border-gold-500 max-w-md w-full rounded-2xl p-6 text-center shadow-2xl relative">
+            <div class="w-16 h-16 bg-gold-500/10 text-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl border border-gold-500/30">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Versão de Demonstração</h3>
+            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                Esta é uma prévia interativa do site. Os redirecionamentos e integrações com o WhatsApp oficial serão ativados após a contratação.
+            </p>
+            <button onclick="closeDemoModal()" class="w-full bg-gold-500 text-dark-900 font-bold py-3 rounded-xl transition-all hover:bg-gold-400">
+                Compreendi
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay de Bloqueio por DevTools / Tentativa de Cópia -->
+    <div id="devtoolsBlocker" class="fixed inset-0 z-[300] bg-dark-900/98 hidden flex-col items-center justify-center p-6 text-center">
+        <i class="fa-solid fa-lock text-red-500 text-6xl mb-4"></i>
+        <h2 class="text-2xl font-bold text-white mb-2">Acesso Restrito ao Código Fonte</h2>
+        <p class="text-gray-400 max-w-md text-sm mb-6">
+            A inspeção e extração deste protótipo foram bloqueadas para proteção de direitos autorais.
+        </p>
+        <button onclick="window.location.reload()" class="bg-gold-500 text-dark-900 font-bold px-6 py-2.5 rounded-lg text-sm">
+            Recarregar Página
+        </button>
+    </div>
+
+    <!-- Scripts de Proteção Rígida -->
+    <script>
+        // Modal Handlers
+        function openDemoModal() {
+            document.getElementById('demoModal').classList.remove('hidden');
+        }
+        function closeDemoModal() {
+            document.getElementById('demoModal').classList.add('hidden');
+        }
+
+        // 1. Desativa Clique Direito (Context Menu)
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            openDemoModal();
+            return false;
+        });
+
+        // 2. Bloqueia Atalhos de Teclado Comuns para Inspeção e Cópia
+        document.addEventListener('keydown', function (e) {
+            // F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                showDevToolsBlock();
+                return false;
+            }
+            // Ctrl+Shift+I ou Cmd+Option+I (Inspect Element)
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+                e.preventDefault();
+                showDevToolsBlock();
+                return false;
+            }
+            // Ctrl+U (View Source)
+            if ((e.ctrlKey || e.metaKey) && e.keyCode === 85) {
+                e.preventDefault();
+                showDevToolsBlock();
+                return false;
+            }
+            // Ctrl+S (Save Page)
+            if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) {
+                e.preventDefault();
+                showDevToolsBlock();
+                return false;
+            }
+            // Ctrl+C (Copy)
+            if ((e.ctrlKey || e.metaKey) && e.keyCode === 67) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        function showDevToolsBlock() {
+            document.getElementById('devtoolsBlocker').classList.remove('hidden');
+            document.getElementById('devtoolsBlocker').classList.add('flex');
+        }
+
+        // 3. Detecção Básica de Abertura de DevTools por Resolução de Tela
+        window.addEventListener('resize', function () {
+            const threshold = 160;
+            if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
+                showDevToolsBlock();
+            }
+        });
+    </script>
+</body>
+</html>
